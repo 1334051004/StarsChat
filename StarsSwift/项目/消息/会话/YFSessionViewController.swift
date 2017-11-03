@@ -58,7 +58,7 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         
         //添加消息输入框
         inputTextView.frame=CGRect.init(x: 0, y: UIScreen.YF_Height-64-50, width: UIScreen.YF_Width, height: 50)
-        //inputTextView.backgroundColor = UIColor.YF_RGB(r: 243, g: 243, b: 243)
+        inputTextView.backgroundColor = UIColor.YF_RGB(r: 243, g: 243, b: 243)
         inputTextView.changeChatTableViewFrame = {[weak self] (height)->() in
             var frame = self?.sessionTableView.frame
             frame?.size.height = height
@@ -67,7 +67,6 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
             self?.sessionTableView.scrollToRow(at: IndexPath.init(row: (self?.sessionArray.count)!-1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
         }
         inputTextView.setInputTextViewMaxHeight(height: 4)
-        inputTextView.backgroundColor = UIColor.lightGray
         view.addSubview(inputTextView)
         
         

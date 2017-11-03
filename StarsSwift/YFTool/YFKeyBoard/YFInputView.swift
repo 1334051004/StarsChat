@@ -20,6 +20,7 @@ class YFInputView: UIView ,UITextViewDelegate{
     var changeChatTableViewFrame:((_ height:CGFloat)->())? = nil
     
     let moreBtnView = YFMoreBtnView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 200))
+    let emojiView = YFEmojiView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 200))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,6 +76,8 @@ class YFInputView: UIView ,UITextViewDelegate{
     }
     //切换更多功能
     @objc func clickMoreBtn(){
+        
+        emojiBtn.isSelected = false
   
         moreBtn.isSelected = !moreBtn.isSelected
         if moreBtn.isSelected {
@@ -84,7 +87,7 @@ class YFInputView: UIView ,UITextViewDelegate{
         }
          self.inputTextView.resignFirstResponder()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05, execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
             self.inputTextView.becomeFirstResponder()
         })
         
@@ -93,6 +96,19 @@ class YFInputView: UIView ,UITextViewDelegate{
     //切换表情键盘
     @objc func clickEmojiBtn(){
         
+        moreBtn.isSelected = false
+        
+        emojiBtn.isSelected = !emojiBtn.isSelected
+        if emojiBtn.isSelected {
+            inputTextView.inputView=emojiView
+        }else{
+            inputTextView.inputView=nil
+        }
+        self.inputTextView.resignFirstResponder()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
+            self.inputTextView.becomeFirstResponder()
+        })
     }
     
     @objc func keyboardWillShow(notification:Notification){
@@ -166,9 +182,21 @@ class YFInputView: UIView ,UITextViewDelegate{
         self.inputTextViewFrameChange(y: UIScreen.YF_Height - CGFloat(64) - keyBoardHeight - CGFloat(inputHeight))
     }
     
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//
+//        return true
+//    }
+    
+//    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+//        return true
+//    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        inputTextView.inputView=nil
+    }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
-        
-        
+   
         self.inputTextViewFrameChange(y: UIScreen.YF_Height-64-self.bounds.height)
     }
     

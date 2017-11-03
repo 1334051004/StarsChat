@@ -12,6 +12,8 @@ class YFMoreBtnView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        self.backgroundColor=UIColor.YF_RGB(r: 243, g: 243, b: 243)
         let buttonW:CGFloat = 55
         let buttonH:CGFloat = buttonW
         let btnTitleArray = ["照片","拍摄"]

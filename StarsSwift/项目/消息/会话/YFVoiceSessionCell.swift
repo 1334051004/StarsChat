@@ -17,8 +17,7 @@ class YFVoiceSessionCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-         self.backgroundColor = UIColor.YF_RGB(r: 60, g: 179, b: 113)
-        
+         self.backgroundColor = UIColor.YF_RGB(r: 223, g: 255, b: 223)
         userImageView=UIImageView()
         userImageView.layer.masksToBounds=true
         userImageView.layer.cornerRadius=5
@@ -39,7 +38,7 @@ class YFVoiceSessionCell: UITableViewCell {
             userImageView.image=UIImage.init(named: (model.cellModel?.userImage)!)
             
             bgImageView.frame = CGRect.init(x: 65, y: 10, width: 80, height: 50)
-            bgImageView.image = UIImage.init(named: "气泡")?.stretchableImage(withLeftCapWidth:30, topCapHeight: 30)
+            bgImageView.image = UIImage.init(named: "接收气泡")?.stretchableImage(withLeftCapWidth:30, topCapHeight: 30)
             
             voiceImageView.frame=CGRect.init(x: 5, y: 5, width: 80, height: 40)
             voiceImageView.image = UIImage.init(named: "icon_voice_left3")
@@ -48,9 +47,9 @@ class YFVoiceSessionCell: UITableViewCell {
             userImageView.image=UIImage.init(named: (model.cellModel?.userImage)!)
             
             bgImageView.frame = CGRect.init(x: UIScreen.YF_Width - 145, y: 10, width: 80, height: 50)
-            bgImageView.image = UIImage.init(named: "灰色气泡")?.stretchableImage(withLeftCapWidth:30, topCapHeight: 30)
+            bgImageView.image = UIImage.init(named: "发送气泡")?.stretchableImage(withLeftCapWidth:30, topCapHeight: 30)
             
-            voiceImageView.frame=CGRect.init(x: 0, y: 5, width: 80, height: 40)
+            voiceImageView.frame=CGRect.init(x: 0, y: 5, width: 75, height: 40)
             voiceImageView.image = UIImage.init(named: "icon_voice_right3")
         }
     }

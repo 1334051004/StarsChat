@@ -16,9 +16,9 @@ class YFImageSessionCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.backgroundColor = UIColor.YF_RGB(r: 60, g: 179, b: 113)
-        
+ 
+        self.backgroundColor = UIColor.YF_RGB(r: 223, g: 255, b: 223)
+       
         userImageView=UIImageView()
         userImageView.layer.masksToBounds=true
         userImageView.layer.cornerRadius=5
@@ -50,7 +50,7 @@ class YFImageSessionCell: UITableViewCell {
             
             
             bgImageView.frame =  contentImageView.bounds
-            bgImageView.image = UIImage.init(named: "气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)
+            bgImageView.image = UIImage.init(named: "接收气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)
      
             contentImageView.layer.mask=bgImageView.layer
         }else{
@@ -64,7 +64,7 @@ class YFImageSessionCell: UITableViewCell {
             
             
             bgImageView.frame =  contentImageView.bounds
-            bgImageView.image = UIImage.init(named: "灰色气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)
+            bgImageView.image = UIImage.init(named: "发送气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)
             
             contentImageView.layer.mask=bgImageView.layer
  
