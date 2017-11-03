@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window=UIWindow()
+        window?.backgroundColor = UIColor.white
+        
+        //设置跟控制器要添加命名空间（默认是项目名称，最好不要有特殊符号）
+        let clsName = "StarsSwift.YFTabBarViewController"
+        let cls = NSClassFromString(clsName) as? UIViewController.Type
+        let vc = cls?.init()
+        
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

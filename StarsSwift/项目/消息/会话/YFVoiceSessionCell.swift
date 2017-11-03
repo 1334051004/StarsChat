@@ -1,0 +1,73 @@
+//
+//  YFVoiceSessionCell.swift
+//  StarsSwift
+//
+//  Created by 李永飞 on 2017/11/1.
+//  Copyright © 2017年 李永飞. All rights reserved.
+//
+
+import UIKit
+
+class YFVoiceSessionCell: UITableViewCell {
+
+      private var userImageView:UIImageView!
+      private var voiceImageView:UIImageView!
+      private var bgImageView:UIImageView!
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+         self.backgroundColor = UIColor.YF_RGB(r: 60, g: 179, b: 113)
+        
+        userImageView=UIImageView()
+        userImageView.layer.masksToBounds=true
+        userImageView.layer.cornerRadius=5
+        contentView.addSubview(userImageView)
+        
+        bgImageView=UIImageView()
+        contentView.addSubview(bgImageView)
+        
+        voiceImageView=UIImageView()
+        bgImageView.addSubview(voiceImageView)
+   
+    }
+    
+    func setCellModel(model:YFSessionCellModel) {
+        let source=model.cellModel?.contentSource
+        if source==0 {
+            userImageView.frame = CGRect.init(x: 10, y: 10, width: 50, height: 50)
+            userImageView.image=UIImage.init(named: (model.cellModel?.userImage)!)
+            
+            bgImageView.frame = CGRect.init(x: 65, y: 10, width: 80, height: 50)
+            bgImageView.image = UIImage.init(named: "气泡")?.stretchableImage(withLeftCapWidth:30, topCapHeight: 30)
+            
+            voiceImageView.frame=CGRect.init(x: 5, y: 5, width: 80, height: 40)
+            voiceImageView.image = UIImage.init(named: "icon_voice_left3")
+        }else{
+            userImageView.frame = CGRect.init(x:UIScreen.YF_Width - 60, y: 10, width: 50, height: 50)
+            userImageView.image=UIImage.init(named: (model.cellModel?.userImage)!)
+            
+            bgImageView.frame = CGRect.init(x: UIScreen.YF_Width - 145, y: 10, width: 80, height: 50)
+            bgImageView.image = UIImage.init(named: "灰色气泡")?.stretchableImage(withLeftCapWidth:30, topCapHeight: 30)
+            
+            voiceImageView.frame=CGRect.init(x: 0, y: 5, width: 80, height: 40)
+            voiceImageView.image = UIImage.init(named: "icon_voice_right3")
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+         self.selectionStyle = .none
+        // Configure the view for the selected state
+    }
+
+}

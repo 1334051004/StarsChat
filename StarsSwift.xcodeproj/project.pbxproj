@@ -8,20 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		D81DA0F41FA80EA60017E760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA0F31FA80EA60017E760 /* AppDelegate.swift */; };
-		D81DA0F61FA80EA60017E760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA0F51FA80EA60017E760 /* ViewController.swift */; };
-		D81DA0F91FA80EA60017E760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81DA0F71FA80EA60017E760 /* Main.storyboard */; };
+		D81DA0F61FA80EA60017E760 /* YFMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA0F51FA80EA60017E760 /* YFMessageViewController.swift */; };
 		D81DA0FB1FA80EA60017E760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81DA0FA1FA80EA60017E760 /* Assets.xcassets */; };
 		D81DA0FE1FA80EA60017E760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81DA0FC1FA80EA60017E760 /* LaunchScreen.storyboard */; };
+		D81DA1061FA8103C0017E760 /* YFTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1051FA8103C0017E760 /* YFTabBarViewController.swift */; };
+		D81DA1081FA810850017E760 /* YFFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1071FA810850017E760 /* YFFriendsViewController.swift */; };
+		D81DA10A1FA810B70017E760 /* YFNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1091FA810B70017E760 /* YFNavigationViewController.swift */; };
+		D81DA10C1FA81E7C0017E760 /* UIColor+YF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA10B1FA81E7C0017E760 /* UIColor+YF.swift */; };
+		D81DA1111FA825350017E760 /* YFMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1101FA825350017E760 /* YFMessageTableViewCell.swift */; };
+		D81DA1131FA8257E0017E760 /* UIScreen+YF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1121FA8257E0017E760 /* UIScreen+YF.swift */; };
+		D81DA1151FA8536F0017E760 /* YFMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1141FA8536F0017E760 /* YFMessageModel.swift */; };
+		D81DA1171FA85E0C0017E760 /* UILabel+YF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1161FA85E0C0017E760 /* UILabel+YF.swift */; };
+		D81DA1191FA85E620017E760 /* String+YF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1181FA85E620017E760 /* String+YF.swift */; };
+		D81DA11C1FA8670F0017E760 /* YFSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA11B1FA8670F0017E760 /* YFSessionViewController.swift */; };
+		D81DA11F1FA8682D0017E760 /* YFTextSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA11E1FA8682D0017E760 /* YFTextSessionCell.swift */; };
+		D85669851FA9D32B008BA27B /* YFInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85669841FA9D32B008BA27B /* YFInputView.swift */; };
+		D85AFAB71FA964090051C698 /* YFSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFAB61FA964090051C698 /* YFSessionModel.swift */; };
+		D85AFAB91FA967B40051C698 /* YFSessionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFAB81FA967B40051C698 /* YFSessionCellModel.swift */; };
+		D85AFABB1FA96B340051C698 /* YFImageSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFABA1FA96B340051C698 /* YFImageSessionCell.swift */; };
+		D85AFABD1FA96B500051C698 /* YFVoiceSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */; };
+		D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */; };
+		D88D03E91FAB0E1600D233EA /* YFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E81FAB0E1600D233EA /* YFButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D81DA0F01FA80EA60017E760 /* StarsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81DA0F31FA80EA60017E760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D81DA0F51FA80EA60017E760 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D81DA0F81FA80EA60017E760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D81DA0F51FA80EA60017E760 /* YFMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMessageViewController.swift; sourceTree = "<group>"; };
 		D81DA0FA1FA80EA60017E760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D81DA0FD1FA80EA60017E760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81DA0FF1FA80EA60017E760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D81DA1051FA8103C0017E760 /* YFTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTabBarViewController.swift; sourceTree = "<group>"; };
+		D81DA1071FA810850017E760 /* YFFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFFriendsViewController.swift; sourceTree = "<group>"; };
+		D81DA1091FA810B70017E760 /* YFNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFNavigationViewController.swift; sourceTree = "<group>"; };
+		D81DA10B1FA81E7C0017E760 /* UIColor+YF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+YF.swift"; sourceTree = "<group>"; };
+		D81DA1101FA825350017E760 /* YFMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMessageTableViewCell.swift; sourceTree = "<group>"; };
+		D81DA1121FA8257E0017E760 /* UIScreen+YF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+YF.swift"; sourceTree = "<group>"; };
+		D81DA1141FA8536F0017E760 /* YFMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMessageModel.swift; sourceTree = "<group>"; };
+		D81DA1161FA85E0C0017E760 /* UILabel+YF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+YF.swift"; sourceTree = "<group>"; };
+		D81DA1181FA85E620017E760 /* String+YF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+YF.swift"; sourceTree = "<group>"; };
+		D81DA11B1FA8670F0017E760 /* YFSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFSessionViewController.swift; sourceTree = "<group>"; };
+		D81DA11E1FA8682D0017E760 /* YFTextSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTextSessionCell.swift; sourceTree = "<group>"; };
+		D85669841FA9D32B008BA27B /* YFInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFInputView.swift; sourceTree = "<group>"; };
+		D85AFAB61FA964090051C698 /* YFSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFSessionModel.swift; sourceTree = "<group>"; };
+		D85AFAB81FA967B40051C698 /* YFSessionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFSessionCellModel.swift; sourceTree = "<group>"; };
+		D85AFABA1FA96B340051C698 /* YFImageSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFImageSessionCell.swift; sourceTree = "<group>"; };
+		D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFVoiceSessionCell.swift; sourceTree = "<group>"; };
+		D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMoreBtnView.swift; sourceTree = "<group>"; };
+		D88D03E81FAB0E1600D233EA /* YFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +88,79 @@
 		D81DA0F21FA80EA60017E760 /* StarsSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D81DA11D1FA8676B0017E760 /* YFTool */,
+				D81DA10D1FA824CE0017E760 /* 项目 */,
 				D81DA0F31FA80EA60017E760 /* AppDelegate.swift */,
-				D81DA0F51FA80EA60017E760 /* ViewController.swift */,
-				D81DA0F71FA80EA60017E760 /* Main.storyboard */,
+				D81DA1051FA8103C0017E760 /* YFTabBarViewController.swift */,
+				D81DA1091FA810B70017E760 /* YFNavigationViewController.swift */,
 				D81DA0FA1FA80EA60017E760 /* Assets.xcassets */,
 				D81DA0FC1FA80EA60017E760 /* LaunchScreen.storyboard */,
 				D81DA0FF1FA80EA60017E760 /* Info.plist */,
 			);
 			path = StarsSwift;
+			sourceTree = "<group>";
+		};
+		D81DA10D1FA824CE0017E760 /* 项目 */ = {
+			isa = PBXGroup;
+			children = (
+				D81DA10F1FA824EB0017E760 /* 消息 */,
+				D81DA10E1FA824E10017E760 /* 好友 */,
+			);
+			path = "项目";
+			sourceTree = "<group>";
+		};
+		D81DA10E1FA824E10017E760 /* 好友 */ = {
+			isa = PBXGroup;
+			children = (
+				D81DA1071FA810850017E760 /* YFFriendsViewController.swift */,
+			);
+			path = "好友";
+			sourceTree = "<group>";
+		};
+		D81DA10F1FA824EB0017E760 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				D81DA11A1FA866B70017E760 /* 会话 */,
+				D81DA0F51FA80EA60017E760 /* YFMessageViewController.swift */,
+				D81DA1141FA8536F0017E760 /* YFMessageModel.swift */,
+				D81DA1101FA825350017E760 /* YFMessageTableViewCell.swift */,
+			);
+			path = "消息";
+			sourceTree = "<group>";
+		};
+		D81DA11A1FA866B70017E760 /* 会话 */ = {
+			isa = PBXGroup;
+			children = (
+				D81DA11B1FA8670F0017E760 /* YFSessionViewController.swift */,
+				D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */,
+				D85AFABA1FA96B340051C698 /* YFImageSessionCell.swift */,
+				D81DA11E1FA8682D0017E760 /* YFTextSessionCell.swift */,
+				D85AFAB61FA964090051C698 /* YFSessionModel.swift */,
+				D85AFAB81FA967B40051C698 /* YFSessionCellModel.swift */,
+			);
+			path = "会话";
+			sourceTree = "<group>";
+		};
+		D81DA11D1FA8676B0017E760 /* YFTool */ = {
+			isa = PBXGroup;
+			children = (
+				D88D03E51FAB0B7F00D233EA /* YFKeyBoard */,
+				D81DA1181FA85E620017E760 /* String+YF.swift */,
+				D81DA1161FA85E0C0017E760 /* UILabel+YF.swift */,
+				D81DA1121FA8257E0017E760 /* UIScreen+YF.swift */,
+				D81DA10B1FA81E7C0017E760 /* UIColor+YF.swift */,
+			);
+			path = YFTool;
+			sourceTree = "<group>";
+		};
+		D88D03E51FAB0B7F00D233EA /* YFKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D85669841FA9D32B008BA27B /* YFInputView.swift */,
+				D88D03E81FAB0E1600D233EA /* YFButton.swift */,
+				D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */,
+			);
+			path = YFKeyBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +189,7 @@
 		D81DA0E81FA80EA60017E760 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YF;
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "李永飞";
@@ -125,7 +225,6 @@
 			files = (
 				D81DA0FE1FA80EA60017E760 /* LaunchScreen.storyboard in Resources */,
 				D81DA0FB1FA80EA60017E760 /* Assets.xcassets in Resources */,
-				D81DA0F91FA80EA60017E760 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +235,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D81DA0F61FA80EA60017E760 /* ViewController.swift in Sources */,
+				D88D03E91FAB0E1600D233EA /* YFButton.swift in Sources */,
+				D81DA10C1FA81E7C0017E760 /* UIColor+YF.swift in Sources */,
+				D81DA1111FA825350017E760 /* YFMessageTableViewCell.swift in Sources */,
+				D81DA11C1FA8670F0017E760 /* YFSessionViewController.swift in Sources */,
+				D81DA11F1FA8682D0017E760 /* YFTextSessionCell.swift in Sources */,
+				D85669851FA9D32B008BA27B /* YFInputView.swift in Sources */,
+				D85AFAB91FA967B40051C698 /* YFSessionCellModel.swift in Sources */,
+				D81DA0F61FA80EA60017E760 /* YFMessageViewController.swift in Sources */,
+				D81DA10A1FA810B70017E760 /* YFNavigationViewController.swift in Sources */,
+				D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */,
+				D81DA1151FA8536F0017E760 /* YFMessageModel.swift in Sources */,
+				D81DA1171FA85E0C0017E760 /* UILabel+YF.swift in Sources */,
+				D85AFABD1FA96B500051C698 /* YFVoiceSessionCell.swift in Sources */,
+				D85AFABB1FA96B340051C698 /* YFImageSessionCell.swift in Sources */,
+				D81DA1131FA8257E0017E760 /* UIScreen+YF.swift in Sources */,
+				D81DA1081FA810850017E760 /* YFFriendsViewController.swift in Sources */,
 				D81DA0F41FA80EA60017E760 /* AppDelegate.swift in Sources */,
+				D85AFAB71FA964090051C698 /* YFSessionModel.swift in Sources */,
+				D81DA1061FA8103C0017E760 /* YFTabBarViewController.swift in Sources */,
+				D81DA1191FA85E620017E760 /* String+YF.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D81DA0F71FA80EA60017E760 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D81DA0F81FA80EA60017E760 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D81DA0FC1FA80EA60017E760 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,11 +385,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarsSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yf.StarsSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -290,11 +400,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StarsSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yf.StarsSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
