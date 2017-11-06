@@ -173,6 +173,7 @@
 		D85AFABD1FA96B500051C698 /* YFVoiceSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */; };
 		D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */; };
 		D88D03E91FAB0E1600D233EA /* YFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E81FAB0E1600D233EA /* YFButton.swift */; };
+		D8FD81DC1FB037F300A87F56 /* YFFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -344,6 +345,7 @@
 		D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFVoiceSessionCell.swift; sourceTree = "<group>"; };
 		D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMoreBtnView.swift; sourceTree = "<group>"; };
 		D88D03E81FAB0E1600D233EA /* YFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFButton.swift; sourceTree = "<group>"; };
+		D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFFriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -548,6 +550,7 @@
 		D81DA10E1FA824E10017E760 /* 好友 */ = {
 			isa = PBXGroup;
 			children = (
+				D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */,
 				D81DA1071FA810850017E760 /* YFFriendsViewController.swift */,
 			);
 			path = "好友";
@@ -829,6 +832,7 @@
 				D81DA10A1FA810B70017E760 /* YFNavigationViewController.swift in Sources */,
 				D81090F81FAC3A73006643FE /* YFEmojiView.swift in Sources */,
 				D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */,
+				D8FD81DC1FB037F300A87F56 /* YFFriendsTableViewCell.swift in Sources */,
 				D81DA1151FA8536F0017E760 /* YFMessageModel.swift in Sources */,
 				D81DA1171FA85E0C0017E760 /* UILabel+YF.swift in Sources */,
 				D85AFABD1FA96B500051C698 /* YFVoiceSessionCell.swift in Sources */,
