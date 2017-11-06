@@ -14,12 +14,18 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
     private let friendCell="YFFriendsTableViewCell"
     private var friendArray=[YFMessageModel]()
     
+    private var mainArray=[[YFMessageModel]]()
+    private var sectionTitleArray=[String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title="好友"
         initData()
+        
+        sortByPinYin()
         initUI()
+       
         
         
     }
@@ -71,21 +77,42 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendArray.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitleArray.count
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mainArray[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view=UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 25))
+        view.backgroundColor=UIColor.YF_RGB(r: 249, g: 249, b: 249)
+        let label=UILabel.init(frame: CGRect.init(x: 10, y: 0, width: UIScreen.YF_Width, height: 25))
+        label.textColor=UIColor.YF_RGB(r: 187, g: 187, b: 187)
+        label.font=UIFont.systemFont(ofSize: 15)
+        label.text=self.sectionTitleArray[section];
+        view.addSubview(label)
+        return view
+    }
+    
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: friendCell, for: indexPath) as!  YFFriendsTableViewCell
-        cell.setModel(model: friendArray[indexPath.row])
+        cell.setModel(model: mainArray[indexPath.section][indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let sVC=YFSessionViewController()
-        sVC.userName = friendArray[indexPath.row].userName!
-        sVC.userImage=friendArray[indexPath.row].userImage!
+        sVC.userName = mainArray[indexPath.section][indexPath.row].userName!
+        sVC.userImage=mainArray[indexPath.section][indexPath.row].userImage!
         sVC.hidesBottomBarWhenPushed=true
         navigationController?.pushViewController(sVC, animated: true)
     }
@@ -94,13 +121,58 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         let deleteAction=UITableViewRowAction.init(style: .default, title: "删除", handler: { (rowAction, rowIndexPath) in
             
-            self.friendArray.remove(at: indexPath.row)
+            self.mainArray[indexPath.section].remove(at: indexPath.row)
             tableView.reloadData()
             
         })
         
         return [deleteAction]
     }
+    
+    
+    func sortByPinYin()    {
+        
+       let localizedIndexedCollation = UILocalizedIndexedCollation.current()
+        var newSectionArray=[[YFMessageModel]]()
+        
+         let sectionTitles = localizedIndexedCollation.sectionTitles
+        for _ in sectionTitles{
+            let array = [YFMessageModel]()
+            newSectionArray.append(array)
+        }
+       
+        
+        for item  in friendArray {
+ 
+            let i =   localizedIndexedCollation.section(for: item, collationStringSelector:#selector(getter: YFMessageModel.userName))
+             newSectionArray[i].append(item)
+            
+        }
+        
+        var sectionArray = [[YFMessageModel]]()
+        for i in 0..<newSectionArray.count{
+            let array = localizedIndexedCollation.sortedArray(from: newSectionArray[i], collationStringSelector: #selector(getter: YFMessageModel.userName))
+            sectionArray.append(array as! [YFMessageModel])
+        }
+        
+        let count:Int =  sectionArray.count
+        for   index:Int in 0..<count {
+       
+            if sectionArray[index].count>0{
+                
+                mainArray.append(sectionArray[index])
+                
+                let title = sectionTitles[index]
+                if !sectionTitleArray.contains(title){
+                   sectionTitleArray.append(title)
+                }
+            }
+           
+        }
+  
+        
+    }
+    
     
 
 }

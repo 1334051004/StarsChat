@@ -10,11 +10,11 @@ import UIKit
 
 class YFMessageModel: NSObject {
     var userImage:String?
-    var userName:String?
+    @objc  var userName:String?
     var date:String?
     var introduction:String?
     var messageCount:String?
-    
+   
     init(dict:[String:Any]) {
         super.init()
         
@@ -25,5 +25,7 @@ class YFMessageModel: NSObject {
         messageCount=dict["messageCount"] as? String
         
     }
+    
+   
     
 }
