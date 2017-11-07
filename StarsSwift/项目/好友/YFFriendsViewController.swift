@@ -72,6 +72,10 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
         friendTableView.dataSource=self
         friendTableView.rowHeight = 60.0
         
+        //修改索引字体颜色
+        friendTableView.sectionIndexColor=UIColor.YF_RGB(r: 187, g: 187, b: 187)
+     
+        
         friendTableView.register(YFFriendsTableViewCell.classForCoder(), forCellReuseIdentifier: friendCell)
         view.addSubview(friendTableView)
         
@@ -127,6 +131,15 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
         })
         
         return [deleteAction]
+    }
+    
+    //UITableView  索引回调方法实现
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionTitleArray
+    }
+    
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index)
     }
     
     
