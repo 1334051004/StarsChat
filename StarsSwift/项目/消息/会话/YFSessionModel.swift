@@ -22,7 +22,7 @@ import UIKit
 class YFSessionModel: NSObject {
     
     var userImage:String?
-    var content:String?
+    var content:Any?
     var contentType:Int?
     var contentSource:Int?
     var width:Int?
@@ -32,7 +32,7 @@ class YFSessionModel: NSObject {
         super.init()
         
         userImage=dict["userImage"] as? String
-        content=dict["content"] as? String
+        content=dict["content"]
         contentType=dict["contentType"] as? Int
         contentSource=dict["contentSource"] as? Int
         width = dict["width"] as? Int

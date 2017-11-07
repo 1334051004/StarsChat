@@ -42,12 +42,15 @@ class YFImageSessionCell: UITableViewCell {
             userImageView.frame = CGRect.init(x: 10, y: 10, width: 50, height: 50)
             userImageView.image=UIImage.init(named: (model.cellModel?.userImage)!)
             
-            
-//            let image=UIImage.init(named: "image2")
-//            contentImageView.frame = CGRect.init(x: 65, y: 10, width: 240, height: 240/(image?.size.width)!*(image?.size.height)!)
+ 
             contentImageView.frame = CGRect.init(x: 65, y: 10, width: CGFloat((model.cellModel?.width)!), height: CGFloat((model.cellModel?.height)!))
-            contentImageView.image = UIImage.init(named: "image2")
-            
+            if model.cellModel?.content is String{
+                let image=model.cellModel?.content as! String
+                contentImageView.image =  UIImage.init(named: image)
+            }else{
+                let image=model.cellModel?.content as! UIImage
+                contentImageView.image = image  
+            }
             
             bgImageView.frame =  contentImageView.bounds
             bgImageView.image = UIImage.init(named: "接收气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)
@@ -57,11 +60,16 @@ class YFImageSessionCell: UITableViewCell {
             userImageView.frame = CGRect.init(x:UIScreen.YF_Width - 60, y: 10, width: 50, height: 50)
             userImageView.image=UIImage.init(named: (model.cellModel?.userImage)!)
             
-            
-            //contentImageView.frame = CGRect.init(x: UIScreen.YF_Width - 145, y: 10, width: 80, height: 50)
+ 
             contentImageView.frame = CGRect.init(x: 65, y: 10, width: CGFloat((model.cellModel?.width)!), height: CGFloat((model.cellModel?.height)!))
-            contentImageView.image = UIImage.init(named: "image")
-            
+ 
+            if model.cellModel?.content is String{
+                let image=model.cellModel?.content as! String
+                contentImageView.image =  UIImage.init(named: image)
+            }else{
+                let image=model.cellModel?.content as! UIImage
+                contentImageView.image = image
+            }
             
             bgImageView.frame =  contentImageView.bounds
             bgImageView.image = UIImage.init(named: "发送气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)

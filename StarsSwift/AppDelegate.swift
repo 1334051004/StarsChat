@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window=UIWindow()
         window?.backgroundColor = UIColor.white
-        
+       
         //设置跟控制器要添加命名空间（默认是项目名称，最好不要有特殊符号）
         let clsName = "StarsSwift.YFTabBarViewController"
         let cls = NSClassFromString(clsName) as? UIViewController.Type
@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
+        UIApplication.shared.statusBarStyle = .lightContent
+       
         return true
     }
 

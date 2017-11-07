@@ -19,15 +19,18 @@ class YFInputView: UIView ,UITextViewDelegate{
         btn.setTitleColor(UIColor.YF_RGB(r: 20, g: 20, b: 20), for: .normal)
         return btn
     }()
-    let inputTextView=UITextView()
-    let emojiBtn=UIButton()
-    let moreBtn=UIButton()
+    private let inputTextView=UITextView()
+    private let emojiBtn=UIButton()
+    private let moreBtn=UIButton()
     var inputTextViewMaxHeight:CGFloat = 0
-    var keyBoardHeight:CGFloat = 0
+    private var keyBoardHeight:CGFloat = 0
     
     var changeChatTableViewFrame:((_ height:CGFloat)->())? = nil
     
-    let moreBtnView = YFMoreBtnView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 200))
+      
+    let moreBtnView = YFMoreBtnView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 200),titleArray:["照片","拍摄","AR"])
+    
+ 
     let emojiView = YFEmojiView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 240))
     
     override init(frame: CGRect) {
@@ -72,6 +75,8 @@ class YFInputView: UIView ,UITextViewDelegate{
     
     }
     
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -85,7 +90,7 @@ class YFInputView: UIView ,UITextViewDelegate{
         
         voiceBtn.isSelected = !voiceBtn.isSelected
         if voiceBtn.isSelected {
-             self.inputTextView.resignFirstResponder()
+            self.inputTextView.resignFirstResponder()
             self.addSubview(recordBtn)
         }else{
             self.inputTextView.becomeFirstResponder()

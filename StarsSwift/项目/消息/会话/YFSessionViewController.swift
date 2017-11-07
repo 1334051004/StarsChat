@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     var userName:String = "会话"
     var userImage:String = ""
@@ -32,8 +32,8 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         let array=[
             ["userImage":userImage ,"content":"开发测试","contentType":0,"contentSource":0,"width":240,"height":160],
             ["userImage":userImage ,"content":"寻找bug,分分析错误，找到原因，采取正确的方案，修正bug","contentType":0,"contentSource":1,"width":240,"height":160],
-            ["userImage":userImage ,"content":"123","contentType":1,"contentSource":0,"width":240,"height":160],
-            ["userImage":userImage ,"content":"123","contentType":1,"contentSource":1,"width":240,"height":160],
+            ["userImage":userImage ,"content":"image2","contentType":1,"contentSource":0,"width":240,"height":160],
+            ["userImage":userImage ,"content":"image","contentType":1,"contentSource":1,"width":240,"height":160],
             ["userImage":userImage ,"content":"123","contentType":2,"contentSource":0,"width":240,"height":160],
             ["userImage":userImage ,"content":"123","contentType":2,"contentSource":1,"width":240,"height":160]]
         for dict in array {
@@ -68,8 +68,46 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         }
         inputTextView.setInputTextViewMaxHeight(height: 4)
         view.addSubview(inputTextView)
+       
+        inputTextView.moreBtnView.moreBtnClick = {[weak self] (index:Int)->()  in
+                        switch index {
+                        case 0: //选择照片
+                            let imagePickerController=UIImagePickerController()
+                            imagePickerController.sourceType = .photoLibrary
+                            imagePickerController.delegate = self
+                
+                            imagePickerController.navigationBar.setBackgroundImage(UIImage.init(named: "导航条"), for: .default)
+                            imagePickerController.navigationBar.tintColor=UIColor.white
+                            
+                            imagePickerController.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white];
+                            
+                            self?.present(imagePickerController, animated: true, completion: nil)
+                        case 1: //打开相机
+                            let imagePickerController=UIImagePickerController()
+                            imagePickerController.sourceType = .camera
+                            imagePickerController.delegate = self
+                            self?.present(imagePickerController, animated: true, completion: nil)
+                        default:
+                            break
+                        }
+                    }
+ 
         
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        picker.dismiss(animated: true, completion: nil)
+        
+        let image=info[UIImagePickerControllerOriginalImage] as! UIImage
+        let height = 240 / image.size.width * image.size.height
+        let dict = ["userImage":userImage ,"content":image,"contentType":1,"contentSource":1,"width":240,"height":Int(height)] as [String : Any]
+        let model =  YFSessionModel.init(dict:dict)
+        let cellModel = YFSessionCellModel.init(model: model)
+        sessionArray.append(cellModel)
+        sessionTableView.insertRows(at: [IndexPath.init(row: sessionArray.count-1, section: 0)], with: .none)
+        sessionTableView.scrollToRow(at: IndexPath.init(row: sessionArray.count-1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

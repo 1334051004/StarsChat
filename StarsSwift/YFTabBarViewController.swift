@@ -20,7 +20,7 @@ class YFTabBarViewController: UITabBarController {
             let clsName = "StarsSwift." + vcStr + "ViewController"
             let cls = NSClassFromString(clsName) as? UIViewController.Type
             let vc = cls?.init()
- 
+  
             let navVc=YFNavigationViewController(rootViewController:vc!)
             
             navVc.tabBarItem.selectedImage=UIImage.init(named: vcStr + "Selected")?.withRenderingMode(.alwaysOriginal)
