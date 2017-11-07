@@ -16,8 +16,8 @@ class YFMoreBtnView: UIView {
         self.backgroundColor=UIColor.YF_RGB(r: 243, g: 243, b: 243)
         let buttonW:CGFloat = 55
         let buttonH:CGFloat = buttonW
-        let btnTitleArray = ["照片","拍摄"]
-        for i in 0..<2 {
+        let btnTitleArray = ["照片","拍摄","AR"]
+        for i in 0..<btnTitleArray.count {
            
             let X = (((self.bounds.width - (4 * buttonW)) / 5.0) * CGFloat((i % 4) + 1)) + (buttonW * CGFloat(i % 4));
             let Y = 15 + CGFloat(i / 4) * CGFloat(buttonH + 35);

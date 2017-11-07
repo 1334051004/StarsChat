@@ -74,6 +74,7 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         //修改索引字体颜色
         friendTableView.sectionIndexColor=UIColor.YF_RGB(r: 187, g: 187, b: 187)
+        
      
         
         friendTableView.register(YFFriendsTableViewCell.classForCoder(), forCellReuseIdentifier: friendCell)

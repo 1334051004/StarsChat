@@ -11,6 +11,14 @@ import UIKit
 class YFInputView: UIView ,UITextViewDelegate{
 
     let voiceBtn=UIButton()
+    lazy var recordBtn:UIButton={
+        let btn=UIButton()
+         btn.frame=CGRect.init(x: voiceBtn.frame.maxX+5, y: 6, width: UIScreen.YF_Width-115, height: 38)
+        btn.setTitle("按住 说话", for: .normal)
+        btn.setTitle("正在 录音", for: .highlighted)
+        btn.setTitleColor(UIColor.YF_RGB(r: 20, g: 20, b: 20), for: .normal)
+        return btn
+    }()
     let inputTextView=UITextView()
     let emojiBtn=UIButton()
     let moreBtn=UIButton()
@@ -20,7 +28,7 @@ class YFInputView: UIView ,UITextViewDelegate{
     var changeChatTableViewFrame:((_ height:CGFloat)->())? = nil
     
     let moreBtnView = YFMoreBtnView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 200))
-    let emojiView = YFEmojiView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 200))
+    let emojiView = YFEmojiView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 240))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,12 +80,24 @@ class YFInputView: UIView ,UITextViewDelegate{
     
     //切换录音
     @objc func clickVoiceBtn(){
+        emojiBtn.isSelected = false
+        moreBtn.isSelected=false
         
+        voiceBtn.isSelected = !voiceBtn.isSelected
+        if voiceBtn.isSelected {
+             self.inputTextView.resignFirstResponder()
+            self.addSubview(recordBtn)
+        }else{
+            self.inputTextView.becomeFirstResponder()
+            recordBtn.removeFromSuperview()
+        }
     }
     //切换更多功能
     @objc func clickMoreBtn(){
         
         emojiBtn.isSelected = false
+        recordBtn.isSelected=false
+        recordBtn.removeFromSuperview()
   
         moreBtn.isSelected = !moreBtn.isSelected
         if moreBtn.isSelected {
@@ -97,6 +117,8 @@ class YFInputView: UIView ,UITextViewDelegate{
     @objc func clickEmojiBtn(){
         
         moreBtn.isSelected = false
+        recordBtn.isSelected=false
+        recordBtn.removeFromSuperview()
         
         emojiBtn.isSelected = !emojiBtn.isSelected
         if emojiBtn.isSelected {

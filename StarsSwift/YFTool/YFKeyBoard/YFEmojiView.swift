@@ -13,6 +13,7 @@ class YFEmojiView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
     private var emojiIconArray=[String]()
     private var emojiTextArray=[String]()
     private let collectionCell="YFEmojiCollectionViewCell"
+    private let pageControl=UIPageControl()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,7 +42,7 @@ class YFEmojiView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
         layout.minimumLineSpacing=0
         layout.minimumInteritemSpacing=0
         
-        let collectionView=UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height-35), collectionViewLayout: layout)
+        let collectionView=UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height-55), collectionViewLayout: layout)
         collectionView.isDirectionalLockEnabled=true
         collectionView.isPagingEnabled=true
         collectionView.delegate=self
@@ -52,8 +53,15 @@ class YFEmojiView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
         collectionView.register(YFEmojiCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: collectionCell)
         self.addSubview(collectionView)
         
+        pageControl.frame=CGRect.init(x: 0, y: collectionView.frame.maxY, width: self.bounds.width, height: 20)
+        pageControl.backgroundColor=UIColor.YF_RGB(r: 243, g: 243, b: 243)
+        pageControl.currentPageIndicatorTintColor = UIColor.YF_RGB(r: 11, g: 160, b: 98)
+        pageControl.pageIndicatorTintColor = UIColor.YF_RGB(r: 187, g: 187, b: 187)
+        pageControl.isUserInteractionEnabled = false
+        pageControl.numberOfPages = 3;
+        self.addSubview(pageControl)
         
-        let sendBtn=UIButton.init(frame: CGRect.init(x: self.bounds.width-80, y: collectionView.frame.maxY, width: 80, height: 35))
+        let sendBtn=UIButton.init(frame: CGRect.init(x: self.bounds.width-80, y: pageControl.frame.maxY, width: 80, height: 35))
         sendBtn.setTitle("发送", for: .normal)
         sendBtn.setTitleColor(.white, for: .normal)
         sendBtn.titleLabel?.font=UIFont.systemFont(ofSize: 15)
@@ -73,6 +81,10 @@ class YFEmojiView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
         
         return cell
     }
+    
+    
+    
+   
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
