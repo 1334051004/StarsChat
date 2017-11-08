@@ -15,6 +15,9 @@ class YFEmojiView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
     private let collectionCell="YFEmojiCollectionViewCell"
     private let pageControl=UIPageControl()
     
+    var inputEmoji : ((_ text:String)->())?
+    var sendEmoji : (()->())?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -66,8 +69,15 @@ class YFEmojiView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
         sendBtn.setTitleColor(.white, for: .normal)
         sendBtn.titleLabel?.font=UIFont.systemFont(ofSize: 15)
         sendBtn.backgroundColor=UIColor.YF_RGB(r: 11, g: 160, b: 98)
+        sendBtn.addTarget(self, action: #selector(sendClick), for: .touchUpInside)
         self.addSubview(sendBtn)
         
+    }
+    
+    @objc private func sendClick(){
+        if sendEmoji != nil {
+            sendEmoji!()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -87,6 +97,12 @@ class YFEmojiView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let text = emojiTextArray[indexPath.row]
+        
+        if inputEmoji != nil {
+            inputEmoji!(text)
+        }
         
     }
     

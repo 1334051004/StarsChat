@@ -14,6 +14,7 @@ class YFInputView: UIView ,UITextViewDelegate{
     lazy var recordBtn:UIButton={
         let btn=UIButton()
          btn.frame=CGRect.init(x: voiceBtn.frame.maxX+5, y: 6, width: UIScreen.YF_Width-115, height: 38)
+        btn.backgroundColor = .white
         btn.setTitle("按住 说话", for: .normal)
         btn.setTitle("正在 录音", for: .highlighted)
         btn.setTitleColor(UIColor.YF_RGB(r: 20, g: 20, b: 20), for: .normal)
@@ -65,6 +66,26 @@ class YFInputView: UIView ,UITextViewDelegate{
         emojiBtn.setImage(UIImage.init(named: "liaotian_ic_biaoqing_press"), for: .highlighted)
         emojiBtn.addTarget(self, action: #selector(clickEmojiBtn), for: .touchUpInside)
         self.addSubview(emojiBtn)
+        //表情输入
+        emojiView.inputEmoji = {[weak self] (text:String)->() in
+            self?.inputTextView.text = self?.inputTextView.text.appending(text)
+            self?.textViewDidChange((self?.inputTextView)!)
+        }
+        emojiView.sendEmoji={ [weak self] in
+            
+            guard let text=self?.inputTextView.text else{
+                return
+            }
+            
+            if !text.isEmpty{
+                if self?.sendTextClick != nil{
+                    self?.sendTextClick!(text)
+                }
+            }
+ 
+        }
+        
+        
         
  
         //更多操作按钮
@@ -92,9 +113,16 @@ class YFInputView: UIView ,UITextViewDelegate{
         voiceBtn.isSelected = !voiceBtn.isSelected
         if voiceBtn.isSelected {
             self.inputTextView.resignFirstResponder()
+            var frame=self.frame;
+            frame.origin.y=UIScreen.YF_Height-64-50
+            frame.size.height=50
+            self.frame=frame
+            inputTextView.frame=CGRect.init(x: voiceBtn.frame.maxX+5, y: 6, width: UIScreen.YF_Width-115, height: 38)
+            self.inputTextViewFrameChange(y: UIScreen.YF_Height-self.bounds.height-64 )
             self.addSubview(recordBtn)
         }else{
             self.inputTextView.becomeFirstResponder()
+            textViewDidChange(inputTextView)
             recordBtn.removeFromSuperview()
         }
     }
@@ -161,7 +189,7 @@ class YFInputView: UIView ,UITextViewDelegate{
         }
     }
     
-    
+    //改变InputView 的frame
     func  inputTextViewFrameChange(y:CGFloat){
         var frame=self.frame
         frame.origin.y = y
@@ -214,10 +242,14 @@ class YFInputView: UIView ,UITextViewDelegate{
 
          if (text == "\n") {
             //发送文本消息
-            if sendTextClick != nil{
+            if !text.isEmpty{
+              if sendTextClick != nil{
                 sendTextClick!(inputTextView.text)
+               }
+                
+               inputTextView.text = ""
+               textViewDidChange(inputTextView)
             }
-            inputTextView.text = ""
             return false
          }
          return true

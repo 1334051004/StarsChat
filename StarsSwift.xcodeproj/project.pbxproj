@@ -173,6 +173,7 @@
 		D85AFABD1FA96B500051C698 /* YFVoiceSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */; };
 		D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */; };
 		D88D03E91FAB0E1600D233EA /* YFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E81FAB0E1600D233EA /* YFButton.swift */; };
+		D8F6086C1FB2B2020098A1C1 /* YFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */; };
 		D8FD81DC1FB037F300A87F56 /* YFFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -345,6 +346,7 @@
 		D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFVoiceSessionCell.swift; sourceTree = "<group>"; };
 		D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMoreBtnView.swift; sourceTree = "<group>"; };
 		D88D03E81FAB0E1600D233EA /* YFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFButton.swift; sourceTree = "<group>"; };
+		D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFLabel.swift; sourceTree = "<group>"; };
 		D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFFriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -602,6 +604,7 @@
 				D81090F71FAC3A73006643FE /* YFEmojiView.swift */,
 				D81092161FAC42EF006643FE /* YFEmojiCollectionViewCell.swift */,
 				D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */,
+				D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */,
 			);
 			path = YFKeyBoard;
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 				D8FD81DC1FB037F300A87F56 /* YFFriendsTableViewCell.swift in Sources */,
 				D81DA1151FA8536F0017E760 /* YFMessageModel.swift in Sources */,
 				D81DA1171FA85E0C0017E760 /* UILabel+YF.swift in Sources */,
+				D8F6086C1FB2B2020098A1C1 /* YFLabel.swift in Sources */,
 				D85AFABD1FA96B500051C698 /* YFVoiceSessionCell.swift in Sources */,
 				D85AFABB1FA96B340051C698 /* YFImageSessionCell.swift in Sources */,
 				D81DA1131FA8257E0017E760 /* UIScreen+YF.swift in Sources */,

@@ -12,7 +12,7 @@ class YFTextSessionCell: UITableViewCell {
 
     var userImageView:UIImageView!
     var bgImageView:UIImageView!
-    var userTextLabel:UILabel!
+    var userTextLabel:YFLabel!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,7 +26,7 @@ class YFTextSessionCell: UITableViewCell {
         bgImageView=UIImageView()
         contentView.addSubview(bgImageView)
         
-        userTextLabel=UILabel()
+        userTextLabel=YFLabel()
         userTextLabel.numberOfLines = 0
         userTextLabel.font=UIFont.systemFont(ofSize: 18)
         userTextLabel.textColor=UIColor.YF_RGB(r: 20, g: 20, b: 20)
@@ -45,7 +45,9 @@ class YFTextSessionCell: UITableViewCell {
             
             
             userTextLabel.frame=CGRect.init(x: 15, y: 0, width: model.contentWidth!+10, height: model.contentHeight!)
-            userTextLabel.text=model.cellModel?.content as? String
+            
+            let text=model.cellModel?.content as? String
+            userTextLabel.setText(text: text!)
             userTextLabel.textColor = .white
             
             
@@ -57,7 +59,9 @@ class YFTextSessionCell: UITableViewCell {
             bgImageView.image = UIImage.init(named: "发送气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)
             
             userTextLabel.frame=CGRect.init(x: 15, y: 0, width: model.contentWidth!+10, height: model.contentHeight!)
-            userTextLabel.text=model.cellModel?.content as? String
+            
+            let text=model.cellModel?.content as? String
+            userTextLabel.setText(text: text!)
             userTextLabel.textColor=UIColor.YF_RGB(r: 20, g: 20, b: 20)
           
         }
