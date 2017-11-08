@@ -173,6 +173,7 @@
 		D85AFABD1FA96B500051C698 /* YFVoiceSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */; };
 		D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */; };
 		D88D03E91FAB0E1600D233EA /* YFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E81FAB0E1600D233EA /* YFButton.swift */; };
+		D8D534931FB2FF7400DE90E7 /* YFARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D534921FB2FF7400DE90E7 /* YFARViewController.swift */; };
 		D8F6086C1FB2B2020098A1C1 /* YFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */; };
 		D8FD81DC1FB037F300A87F56 /* YFFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -346,6 +347,7 @@
 		D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFVoiceSessionCell.swift; sourceTree = "<group>"; };
 		D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMoreBtnView.swift; sourceTree = "<group>"; };
 		D88D03E81FAB0E1600D233EA /* YFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFButton.swift; sourceTree = "<group>"; };
+		D8D534921FB2FF7400DE90E7 /* YFARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFARViewController.swift; sourceTree = "<group>"; };
 		D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFLabel.swift; sourceTree = "<group>"; };
 		D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFFriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -572,6 +574,7 @@
 		D81DA11A1FA866B70017E760 /* 会话 */ = {
 			isa = PBXGroup;
 			children = (
+				D8D534911FB2FF5A00DE90E7 /* AR */,
 				D81DA11B1FA8670F0017E760 /* YFSessionViewController.swift */,
 				D85AFABC1FA96B500051C698 /* YFVoiceSessionCell.swift */,
 				D85AFABA1FA96B340051C698 /* YFImageSessionCell.swift */,
@@ -607,6 +610,14 @@
 				D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */,
 			);
 			path = YFKeyBoard;
+			sourceTree = "<group>";
+		};
+		D8D534911FB2FF5A00DE90E7 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				D8D534921FB2FF7400DE90E7 /* YFARViewController.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -823,6 +834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D534931FB2FF7400DE90E7 /* YFARViewController.swift in Sources */,
 				D81092171FAC42EF006643FE /* YFEmojiCollectionViewCell.swift in Sources */,
 				D88D03E91FAB0E1600D233EA /* YFButton.swift in Sources */,
 				D81DA10C1FA81E7C0017E760 /* UIColor+YF.swift in Sources */,
