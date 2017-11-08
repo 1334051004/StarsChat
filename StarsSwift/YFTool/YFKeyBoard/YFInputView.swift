@@ -27,6 +27,7 @@ class YFInputView: UIView ,UITextViewDelegate{
     
     var changeChatTableViewFrame:((_ height:CGFloat)->())? = nil
     
+    var sendTextClick:((_ text:String)->())?
       
     let moreBtnView = YFMoreBtnView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 200),titleArray:["照片","拍摄","AR"])
     
@@ -209,14 +210,20 @@ class YFInputView: UIView ,UITextViewDelegate{
         self.inputTextViewFrameChange(y: UIScreen.YF_Height - CGFloat(64) - keyBoardHeight - CGFloat(inputHeight))
     }
     
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//
-//        return true
-//    }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
+         if (text == "\n") {
+            //发送文本消息
+            if sendTextClick != nil{
+                sendTextClick!(inputTextView.text)
+            }
+            inputTextView.text = ""
+            return false
+         }
+         return true
+    }
     
-//    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-//        return true
-//    }
+ 
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         inputTextView.inputView=nil
@@ -227,5 +234,6 @@ class YFInputView: UIView ,UITextViewDelegate{
         self.inputTextViewFrameChange(y: UIScreen.YF_Height-64-self.bounds.height)
     }
     
+
     
 }

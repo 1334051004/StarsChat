@@ -56,7 +56,7 @@ class YFTextSessionCell: UITableViewCell {
             bgImageView.frame = CGRect.init(x: UIScreen.YF_Width - model.contentWidth!-35-70, y: 10, width: model.contentWidth!+35, height: model.contentHeight!)
             bgImageView.image = UIImage.init(named: "发送气泡")?.stretchableImage(withLeftCapWidth:50, topCapHeight: 50)
             
-            userTextLabel.frame=CGRect.init(x: 15, y: 0, width: model.contentWidth!+15, height: model.contentHeight!)
+            userTextLabel.frame=CGRect.init(x: 15, y: 0, width: model.contentWidth!+10, height: model.contentHeight!)
             userTextLabel.text=model.cellModel?.content as? String
             userTextLabel.textColor=UIColor.YF_RGB(r: 20, g: 20, b: 20)
           

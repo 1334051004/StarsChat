@@ -68,7 +68,18 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         }
         inputTextView.setInputTextViewMaxHeight(height: 4)
         view.addSubview(inputTextView)
+        
+        //发送文本消息
+        inputTextView.sendTextClick = {[weak self] (text:String)->()  in
+            let dict = ["userImage":self?.userImage ?? "" ,"content":text,"contentType":0,"contentSource":1,"width":0,"height":0] as [String : Any]
+            let model =  YFSessionModel.init(dict:dict)
+            let cellModel = YFSessionCellModel.init(model: model)
+            self?.sessionArray.append(cellModel)
+            self?.sessionTableView.insertRows(at: [IndexPath.init(row: (self?.sessionArray.count)!-1, section: 0)], with: .none)
+            self?.sessionTableView.scrollToRow(at: IndexPath.init(row: (self?.sessionArray.count)!-1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+        }
        
+        //打开相册  相机  AR
         inputTextView.moreBtnView.moreBtnClick = {[weak self] (index:Int)->()  in
                         switch index {
                         case 0: //选择照片
@@ -162,20 +173,10 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         inputTextView.endEditing(true)
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }
