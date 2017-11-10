@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import ARKit
 
+@available(iOS 11.0, *)
 class YFARViewController: UIViewController {
 
+    let arSCNView = ARSCNView()
+    let arSession = ARSession()
+    let arConfiguration = ARWorldTrackingConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        arConfiguration.isLightEstimationEnabled = true//自适应灯光（室內到室外的話 畫面會比較柔和）
+        
+        arSession.run(arConfiguration)
+        arSCNView.frame = self.view.frame
+        
+        arSCNView.session = arSession
+        arSCNView.automaticallyUpdatesLighting = true//自动调节亮度
+        
+     
+        self.view.addSubview(arSCNView)
+ 
     }
 
-     
+    
 
 }

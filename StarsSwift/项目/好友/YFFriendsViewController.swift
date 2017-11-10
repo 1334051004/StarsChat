@@ -43,18 +43,20 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
                     ["userImage":"9","userName":"Objective-C","date":"2017.8.9","introduction":"Objective-C诞生于1983年，后来被苹果公司选中，和C++相似，也是对C的面向对象扩展。","messageCount":"2"],
                     ["userImage":"10","userName":"呵呵","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"],
                     
-                    ["userImage":"11","userName":"大号","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"1"],
-                    ["userImage":"12","userName":"胜利","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"100"],
-                    ["userImage":"13","userName":"结束","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"99"],
-                    ["userImage":"14","userName":"时间都去哪了","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"2"],
-                    ["userImage":"15","userName":"呵呵","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"],
+                    ["userImage":"11","userName":"星星编程","date":"2017.8.9","introduction":"GitHub地址https://github.com/1334051004/StarsChat","messageCount":"1"],
+                    ["userImage":"12","userName":"大数据","date":"2017.8.9","introduction":"大数据（big data），指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合，是需要新处理模式才能具有更强的决策力、洞察发现力和流程优化能力的海量、高增长率和多样化的信息资产。","messageCount":"100"],
+                    ["userImage":"13","userName":"云计算","date":"2017.8.9","introduction":"云计算[1]（cloud computing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。","messageCount":"99"],
+                    ["userImage":"14","userName":"软件之星","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"2"],
+                    ["userImage":"15","userName":"AR&VR","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"],
                     
                     ["userImage":"16","userName":"大号","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"1"],
                     ["userImage":"17","userName":"胜利","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"100"],
                     ["userImage":"18","userName":"结束","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"99"],
                     ["userImage":"19","userName":"时间都去哪了","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"2"],
-                    ["userImage":"20","userName":"呵呵","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"],
-                    ["userImage":"21","userName":"呵呵","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"] ,  ["userImage":"22","userName":"呵呵","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"]  ,  ["userImage":"23","userName":"呵呵","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"]
+                    ["userImage":"20","userName":"软件之路","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"],
+                    ["userImage":"21","userName":"黑客帝国","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"] ,
+                    ["userImage":"22","userName":"后起之秀","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"]  ,
+                    ["userImage":"23","userName":"青春代码","date":"2017.8.9","introduction":"完美案例，等你查看","messageCount":"10"]
             
         ]
         
@@ -66,7 +68,8 @@ class YFFriendsViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     private  func initUI(){
-        friendTableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: UIScreen.YF_Height-64), style: .plain)
+         let tableH = UIScreen.YF_Height - UIScreen.YF_StatusBarHeight - (self.navigationController?.navigationBar.bounds.height)!
+        friendTableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: tableH), style: .plain)
         friendTableView.separatorStyle = .none
         friendTableView.delegate=self
         friendTableView.dataSource=self

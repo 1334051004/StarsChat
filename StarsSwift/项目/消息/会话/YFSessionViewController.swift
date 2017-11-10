@@ -44,7 +44,8 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         
     }
     private  func initUI(){
-        sessionTableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: UIScreen.YF_Height-64-50), style: .plain)
+        let tableH = UIScreen.YF_Height - UIScreen.YF_StatusBarHeight - (self.navigationController?.navigationBar.bounds.height)!-50
+        sessionTableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: tableH), style: .plain)
         sessionTableView.separatorStyle = .none
         sessionTableView.delegate=self
         sessionTableView.backgroundColor = .white
@@ -54,10 +55,24 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         sessionTableView.register(YFVoiceSessionCell.classForCoder(), forCellReuseIdentifier: voiceSessionCell)
         view.addSubview(sessionTableView)
   
-      
+        if #available(iOS 11.0, *) {
+            sessionTableView.contentInsetAdjustmentBehavior = .never
+            
+            if __CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 375.0, height: 812.0))||__CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 812.0, height: 375.0)){
+                var frame=sessionTableView.frame
+                frame.size.height = frame.size.height - 34.0
+                sessionTableView.frame=frame
+            }
+           
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
+       
+        
+       
         
         //添加消息输入框
-        inputTextView.frame=CGRect.init(x: 0, y: UIScreen.YF_Height-64-50, width: UIScreen.YF_Width, height: 50)
+        inputTextView.frame=CGRect.init(x: 0, y: sessionTableView.frame.maxY, width: UIScreen.YF_Width, height: 50)
         inputTextView.backgroundColor = UIColor.YF_RGB(r: 243, g: 243, b: 243)
         inputTextView.changeChatTableViewFrame = {[weak self] (height)->() in
             var frame = self?.sessionTableView.frame
@@ -98,6 +113,15 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
                             imagePickerController.sourceType = .camera
                             imagePickerController.delegate = self
                             self?.present(imagePickerController, animated: true, completion: nil)
+                        case 2: //AR场景
+                            if #available(iOS 11.0, *) {
+                                let arVC = YFARViewController()
+                                self?.present(arVC, animated: true, completion: nil)
+                            } else {
+                                // Fallback on earlier versions
+                                
+                            }
+                           
                         default:
                             break
                         }
@@ -119,12 +143,13 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         sessionArray.append(cellModel)
         sessionTableView.insertRows(at: [IndexPath.init(row: sessionArray.count-1, section: 0)], with: .none)
         sessionTableView.scrollToRow(at: IndexPath.init(row: sessionArray.count-1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sessionArray.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel=sessionArray[indexPath.row].cellModel
         let contentType=cellModel?.contentType
@@ -174,9 +199,7 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
+    
  
 }

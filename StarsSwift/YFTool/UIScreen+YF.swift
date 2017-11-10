@@ -18,5 +18,9 @@ extension UIScreen {
         return UIScreen.main.bounds.size.height
     }
     
+    class var YF_StatusBarHeight:CGFloat{
+        return UIApplication.shared.statusBarFrame.size.height
+    }
+  
     
 }

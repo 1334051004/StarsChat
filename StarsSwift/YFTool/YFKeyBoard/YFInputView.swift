@@ -34,6 +34,7 @@ class YFInputView: UIView ,UITextViewDelegate{
     
  
     let emojiView = YFEmojiView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 240))
+   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,7 +85,12 @@ class YFInputView: UIView ,UITextViewDelegate{
             }
  
         }
-        
+        //兼容iPhone X
+        if #available(iOS 11.0, *) {
+            if __CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 375.0, height: 812.0))||__CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 812.0, height: 375.0)){
+                emojiView.frame=CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 274)
+            }
+        }
         
         
  
@@ -119,6 +125,13 @@ class YFInputView: UIView ,UITextViewDelegate{
             self.frame=frame
             inputTextView.frame=CGRect.init(x: voiceBtn.frame.maxX+5, y: 6, width: UIScreen.YF_Width-115, height: 38)
             self.inputTextViewFrameChange(y: UIScreen.YF_Height-self.bounds.height-64 )
+            //兼容iPhone X
+            if #available(iOS 11.0, *) {
+                if __CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 375.0, height: 812.0))||__CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 812.0, height: 375.0)){
+                    self.inputTextViewFrameChange(y: UIScreen.YF_Height-self.bounds.height-122 )
+                }
+            }
+            
             self.addSubview(recordBtn)
         }else{
             self.inputTextView.becomeFirstResponder()
@@ -176,6 +189,12 @@ class YFInputView: UIView ,UITextViewDelegate{
  
         UIView.animate(withDuration: duration as! TimeInterval) {
             self.inputTextViewFrameChange(y: UIScreen.YF_Height-self.keyBoardHeight-self.bounds.height-64 )
+            //兼容iPhone X
+            if #available(iOS 11.0, *) {
+                if __CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 375.0, height: 812.0))||__CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 812.0, height: 375.0)){
+                   self.inputTextViewFrameChange(y: UIScreen.YF_Height-self.keyBoardHeight-self.bounds.height-88 )
+                }
+            }
         }
  
     }
@@ -186,6 +205,12 @@ class YFInputView: UIView ,UITextViewDelegate{
         
         UIView.animate(withDuration: duration as! TimeInterval) {
             self.inputTextViewFrameChange(y: UIScreen.YF_Height-64-self.bounds.height)
+            //兼容iPhone X
+            if #available(iOS 11.0, *) {
+                if __CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 375.0, height: 812.0))||__CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 812.0, height: 375.0)){
+                    self.inputTextViewFrameChange(y: UIScreen.YF_Height-122-self.bounds.height)
+                }
+            }
         }
     }
     
@@ -236,6 +261,14 @@ class YFInputView: UIView ,UITextViewDelegate{
         self.frame=selfFrame
         
         self.inputTextViewFrameChange(y: UIScreen.YF_Height - CGFloat(64) - keyBoardHeight - CGFloat(inputHeight))
+        
+        //兼容iPhone X
+        if #available(iOS 11.0, *) {
+            if __CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 375.0, height: 812.0))||__CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 812.0, height: 375.0)){
+                 self.inputTextViewFrameChange(y: UIScreen.YF_Height - CGFloat(122) - keyBoardHeight - CGFloat(inputHeight))
+            }
+        }
+        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -264,6 +297,15 @@ class YFInputView: UIView ,UITextViewDelegate{
     func textViewDidEndEditing(_ textView: UITextView) {
    
         self.inputTextViewFrameChange(y: UIScreen.YF_Height-64-self.bounds.height)
+        //兼容iPhone X
+        if #available(iOS 11.0, *) {
+            if __CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 375.0, height: 812.0))||__CGSizeEqualToSize(UIScreen.main.bounds.size, CGSize.init(width: 812.0, height: 375.0)){
+                 self.inputTextViewFrameChange(y: UIScreen.YF_Height-122-self.bounds.height)
+            }
+        }
+        
+        
+        
     }
     
 
