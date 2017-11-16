@@ -166,6 +166,8 @@
 		D81DA1191FA85E620017E760 /* String+YF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA1181FA85E620017E760 /* String+YF.swift */; };
 		D81DA11C1FA8670F0017E760 /* YFSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA11B1FA8670F0017E760 /* YFSessionViewController.swift */; };
 		D81DA11F1FA8682D0017E760 /* YFTextSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA11E1FA8682D0017E760 /* YFTextSessionCell.swift */; };
+		D828A1451FBD53B40075BC99 /* YFVoiceBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D828A1441FBD53B40075BC99 /* YFVoiceBtn.swift */; };
+		D828A1471FBD56D90075BC99 /* YFRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D828A1461FBD56D90075BC99 /* YFRecordingView.swift */; };
 		D85669851FA9D32B008BA27B /* YFInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85669841FA9D32B008BA27B /* YFInputView.swift */; };
 		D85AFAB71FA964090051C698 /* YFSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFAB61FA964090051C698 /* YFSessionModel.swift */; };
 		D85AFAB91FA967B40051C698 /* YFSessionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AFAB81FA967B40051C698 /* YFSessionCellModel.swift */; };
@@ -174,6 +176,7 @@
 		D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */; };
 		D88D03E91FAB0E1600D233EA /* YFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D03E81FAB0E1600D233EA /* YFButton.swift */; };
 		D8D534931FB2FF7400DE90E7 /* YFARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D534921FB2FF7400DE90E7 /* YFARViewController.swift */; };
+		D8EE66E81FBD8AC000C17417 /* YFOutsideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EE66E71FBD8AC000C17417 /* YFOutsideView.swift */; };
 		D8F6086C1FB2B2020098A1C1 /* YFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */; };
 		D8FD81DC1FB037F300A87F56 /* YFFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -340,6 +343,8 @@
 		D81DA1181FA85E620017E760 /* String+YF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+YF.swift"; sourceTree = "<group>"; };
 		D81DA11B1FA8670F0017E760 /* YFSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFSessionViewController.swift; sourceTree = "<group>"; };
 		D81DA11E1FA8682D0017E760 /* YFTextSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTextSessionCell.swift; sourceTree = "<group>"; };
+		D828A1441FBD53B40075BC99 /* YFVoiceBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFVoiceBtn.swift; sourceTree = "<group>"; };
+		D828A1461FBD56D90075BC99 /* YFRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFRecordingView.swift; sourceTree = "<group>"; };
 		D85669841FA9D32B008BA27B /* YFInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFInputView.swift; sourceTree = "<group>"; };
 		D85AFAB61FA964090051C698 /* YFSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFSessionModel.swift; sourceTree = "<group>"; };
 		D85AFAB81FA967B40051C698 /* YFSessionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFSessionCellModel.swift; sourceTree = "<group>"; };
@@ -348,6 +353,7 @@
 		D88D03E61FAB0D3A00D233EA /* YFMoreBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMoreBtnView.swift; sourceTree = "<group>"; };
 		D88D03E81FAB0E1600D233EA /* YFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFButton.swift; sourceTree = "<group>"; };
 		D8D534921FB2FF7400DE90E7 /* YFARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFARViewController.swift; sourceTree = "<group>"; };
+		D8EE66E71FBD8AC000C17417 /* YFOutsideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFOutsideView.swift; sourceTree = "<group>"; };
 		D8F6086B1FB2B2020098A1C1 /* YFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFLabel.swift; sourceTree = "<group>"; };
 		D8FD81DB1FB037F300A87F56 /* YFFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFFriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -603,6 +609,9 @@
 				D81090FB1FAC3C9B006643FE /* EmotionIcons */,
 				D81090F91FAC3C87006643FE /* emotion_icons.plist */,
 				D85669841FA9D32B008BA27B /* YFInputView.swift */,
+				D828A1441FBD53B40075BC99 /* YFVoiceBtn.swift */,
+				D8EE66E71FBD8AC000C17417 /* YFOutsideView.swift */,
+				D828A1461FBD56D90075BC99 /* YFRecordingView.swift */,
 				D88D03E81FAB0E1600D233EA /* YFButton.swift */,
 				D81090F71FAC3A73006643FE /* YFEmojiView.swift */,
 				D81092161FAC42EF006643FE /* YFEmojiCollectionViewCell.swift */,
@@ -847,6 +856,7 @@
 				D81DA10A1FA810B70017E760 /* YFNavigationViewController.swift in Sources */,
 				D81090F81FAC3A73006643FE /* YFEmojiView.swift in Sources */,
 				D88D03E71FAB0D3A00D233EA /* YFMoreBtnView.swift in Sources */,
+				D8EE66E81FBD8AC000C17417 /* YFOutsideView.swift in Sources */,
 				D8FD81DC1FB037F300A87F56 /* YFFriendsTableViewCell.swift in Sources */,
 				D81DA1151FA8536F0017E760 /* YFMessageModel.swift in Sources */,
 				D81DA1171FA85E0C0017E760 /* UILabel+YF.swift in Sources */,
@@ -858,7 +868,9 @@
 				D81DA0F41FA80EA60017E760 /* AppDelegate.swift in Sources */,
 				D85AFAB71FA964090051C698 /* YFSessionModel.swift in Sources */,
 				D81DA1061FA8103C0017E760 /* YFTabBarViewController.swift in Sources */,
+				D828A1451FBD53B40075BC99 /* YFVoiceBtn.swift in Sources */,
 				D81DA1191FA85E620017E760 /* String+YF.swift in Sources */,
+				D828A1471FBD56D90075BC99 /* YFRecordingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

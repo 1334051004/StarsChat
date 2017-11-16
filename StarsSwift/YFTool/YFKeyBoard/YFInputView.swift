@@ -12,12 +12,9 @@ class YFInputView: UIView ,UITextViewDelegate{
 
     let voiceBtn=UIButton()
     lazy var recordBtn:UIButton={
-        let btn=UIButton()
+        let btn=YFVoiceBtn()
          btn.frame=CGRect.init(x: voiceBtn.frame.maxX+5, y: 6, width: UIScreen.YF_Width-115, height: 38)
-        btn.backgroundColor = .white
-        btn.setTitle("按住 说话", for: .normal)
-        btn.setTitle("正在 录音", for: .highlighted)
-        btn.setTitleColor(UIColor.YF_RGB(r: 20, g: 20, b: 20), for: .normal)
+     
         return btn
     }()
     private let inputTextView=UITextView()
@@ -35,6 +32,8 @@ class YFInputView: UIView ,UITextViewDelegate{
  
     let emojiView = YFEmojiView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.YF_Width, height: 240))
    
+    
+  
     
     override init(frame: CGRect) {
         super.init(frame: frame)
