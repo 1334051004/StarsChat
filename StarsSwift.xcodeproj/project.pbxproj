@@ -151,6 +151,7 @@
 		D81092141FAC3C9C006643FE /* emotion_zuotaiji.png in Resources */ = {isa = PBXBuildFile; fileRef = D81091871FAC3C9B006643FE /* emotion_zuotaiji.png */; };
 		D81092151FAC3C9C006643FE /* msg_state_fail_resend.png in Resources */ = {isa = PBXBuildFile; fileRef = D81091881FAC3C9B006643FE /* msg_state_fail_resend.png */; };
 		D81092171FAC42EF006643FE /* YFEmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81092161FAC42EF006643FE /* YFEmojiCollectionViewCell.swift */; };
+		D8166BE61FBE6BFD008505AF /* YFAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8166BE51FBE6BFD008505AF /* YFAudioTool.swift */; };
 		D81DA0F41FA80EA60017E760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA0F31FA80EA60017E760 /* AppDelegate.swift */; };
 		D81DA0F61FA80EA60017E760 /* YFMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DA0F51FA80EA60017E760 /* YFMessageViewController.swift */; };
 		D81DA0FB1FA80EA60017E760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81DA0FA1FA80EA60017E760 /* Assets.xcassets */; };
@@ -326,6 +327,7 @@
 		D81091871FAC3C9B006643FE /* emotion_zuotaiji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_zuotaiji.png; sourceTree = "<group>"; };
 		D81091881FAC3C9B006643FE /* msg_state_fail_resend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg_state_fail_resend.png; sourceTree = "<group>"; };
 		D81092161FAC42EF006643FE /* YFEmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFEmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8166BE51FBE6BFD008505AF /* YFAudioTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFAudioTool.swift; sourceTree = "<group>"; };
 		D81DA0F01FA80EA60017E760 /* StarsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81DA0F31FA80EA60017E760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D81DA0F51FA80EA60017E760 /* YFMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFMessageViewController.swift; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 				D85669841FA9D32B008BA27B /* YFInputView.swift */,
 				D828A1441FBD53B40075BC99 /* YFVoiceBtn.swift */,
 				D8EE66E71FBD8AC000C17417 /* YFOutsideView.swift */,
+				D8166BE51FBE6BFD008505AF /* YFAudioTool.swift */,
 				D828A1461FBD56D90075BC99 /* YFRecordingView.swift */,
 				D88D03E81FAB0E1600D233EA /* YFButton.swift */,
 				D81090F71FAC3A73006643FE /* YFEmojiView.swift */,
@@ -868,6 +871,7 @@
 				D81DA0F41FA80EA60017E760 /* AppDelegate.swift in Sources */,
 				D85AFAB71FA964090051C698 /* YFSessionModel.swift in Sources */,
 				D81DA1061FA8103C0017E760 /* YFTabBarViewController.swift in Sources */,
+				D8166BE61FBE6BFD008505AF /* YFAudioTool.swift in Sources */,
 				D828A1451FBD53B40075BC99 /* YFVoiceBtn.swift in Sources */,
 				D81DA1191FA85E620017E760 /* String+YF.swift in Sources */,
 				D828A1471FBD56D90075BC99 /* YFRecordingView.swift in Sources */,

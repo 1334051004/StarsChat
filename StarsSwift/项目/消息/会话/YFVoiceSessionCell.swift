@@ -13,6 +13,7 @@ class YFVoiceSessionCell: UITableViewCell {
       private var userImageView:UIImageView!
       private var voiceImageView:UIImageView!
       private var bgImageView:UIImageView!
+    var playVoice:(()->())?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,10 +25,28 @@ class YFVoiceSessionCell: UITableViewCell {
         contentView.addSubview(userImageView)
         
         bgImageView=UIImageView()
+        bgImageView.isUserInteractionEnabled=true
         contentView.addSubview(bgImageView)
         
         voiceImageView=UIImageView()
+        voiceImageView.isUserInteractionEnabled=true
         bgImageView.addSubview(voiceImageView)
+        
+        
+        let tap=UITapGestureRecognizer.init(target: self, action: #selector(palyVoiceGesture))
+        voiceImageView.addGestureRecognizer(tap)
+   
+    }
+    
+    @objc func palyVoiceGesture(){
+        if playVoice != nil {
+            playVoice!()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            self.voiceImageView.animationDuration = 1
+            self.voiceImageView.startAnimating()
+        }
    
     }
     
@@ -42,6 +61,10 @@ class YFVoiceSessionCell: UITableViewCell {
             
             voiceImageView.frame=CGRect.init(x: 5, y: 5, width: 80, height: 40)
             voiceImageView.image = UIImage.init(named: "icon_voice_left3")
+            voiceImageView.animationImages = [
+                UIImage.init(named: "icon_voice_left1")!,
+                UIImage.init(named: "icon_voice_left2")!,
+                UIImage.init(named: "icon_voice_left3")!]
         }else{
             userImageView.frame = CGRect.init(x:UIScreen.YF_Width - 60, y: 10, width: 50, height: 50)
             userImageView.image=UIImage.init(named: (model.cellModel?.userImage)!)
@@ -51,6 +74,10 @@ class YFVoiceSessionCell: UITableViewCell {
             
             voiceImageView.frame=CGRect.init(x: 0, y: 5, width: 75, height: 40)
             voiceImageView.image = UIImage.init(named: "icon_voice_right3")
+            voiceImageView.animationImages = [
+                UIImage.init(named: "icon_voice_right1")!,
+                UIImage.init(named: "icon_voice_right2")!,
+                UIImage.init(named: "icon_voice_right3")!]
         }
     }
     

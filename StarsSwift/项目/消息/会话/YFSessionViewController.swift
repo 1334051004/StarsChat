@@ -116,7 +116,8 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
                         case 2: //AR场景
                             if #available(iOS 11.0, *) {
                                 let arVC = YFARViewController()
-                                self?.present(arVC, animated: true, completion: nil)
+                                arVC.hidesBottomBarWhenPushed=true
+                                self?.navigationController?.pushViewController(arVC, animated: true)
                             } else {
                                 // Fallback on earlier versions
                                 
@@ -126,7 +127,17 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
                             break
                         }
                     }
- 
+        
+        //发送语音
+        inputTextView.recordBtn.sendVolice = {[weak self] (url)->Void in
+            let dict = ["userImage":self?.userImage ?? "" ,"content":url,"contentType":2,"contentSource":1,"width":0,"height":0] as [String : Any]
+            let model =  YFSessionModel.init(dict:dict)
+            let cellModel = YFSessionCellModel.init(model: model)
+            self?.sessionArray.append(cellModel)
+            self?.sessionTableView.insertRows(at: [IndexPath.init(row: (self?.sessionArray.count)!-1, section: 0)], with: .none)
+            self?.sessionTableView.scrollToRow(at: IndexPath.init(row: (self?.sessionArray.count)!-1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+        }
+  
         
     }
     
@@ -173,7 +184,12 @@ class YFSessionViewController: UIViewController ,UITableViewDelegate,UITableView
                             let cell=tableView.dequeueReusableCell(withIdentifier: voiceSessionCell, for: indexPath) as! YFVoiceSessionCell
             
                             cell.setCellModel(model: sessionArray[indexPath.row])
-            
+            cell.playVoice = {[weak self] ()->() in
+                
+                self?.sessionTableView.reloadData()
+                YFAudioTool.share().playRecord()
+                
+            }
             
                             return cell
         }

@@ -9,8 +9,11 @@
 import UIKit
 
 class YFVoiceBtn: UIButton {
-    let voiceView=YFRecordingView.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
-     let outsideView=YFOutsideView.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
+   private let voiceView=YFRecordingView.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
+   private let outsideView=YFOutsideView.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
+    
+   public var sendVolice : ((_ url:String)->())?
+    
     override init(frame: CGRect) {
  
         super.init(frame:frame)
@@ -32,24 +35,33 @@ class YFVoiceBtn: UIButton {
     //开始录音
     @objc func downVoice() {
         voiceView.start()
+        YFAudioTool.share().startRecord()
         print("开始录音")
     }
     
-    //结束录音
+    //结束录音  并发送录音
     @objc func upVoice() {
         voiceView.end()
+        YFAudioTool.share().stopRecord()
+ 
+        //发送语音
+        if sendVolice != nil{
+            sendVolice!(YFAudioTool.share().file_path!)
+        }
         print("结束录音")
     }
     
     //取消录音
     @objc func outVoice() {
         outsideView.outInside()
+         YFAudioTool.share().stopRecord()
         print("取消录音")
         
     }
     @objc func cancelVoice() {
-         voiceView.end()
+        voiceView.end()
         outsideView.cancel()
+        YFAudioTool.share().stopRecord()
         print("取消录音")
         
     }

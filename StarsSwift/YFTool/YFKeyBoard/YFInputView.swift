@@ -11,7 +11,7 @@ import UIKit
 class YFInputView: UIView ,UITextViewDelegate{
 
     let voiceBtn=UIButton()
-    lazy var recordBtn:UIButton={
+    lazy var recordBtn:YFVoiceBtn={
         let btn=YFVoiceBtn()
          btn.frame=CGRect.init(x: voiceBtn.frame.maxX+5, y: 6, width: UIScreen.YF_Width-115, height: 38)
      
