@@ -39,14 +39,27 @@ class YFVoiceSessionCell: UITableViewCell {
     }
     
     @objc func palyVoiceGesture(){
+        //如果正在播放录音，停止播放
+        if self.voiceImageView.isAnimating{
+            self.voiceImageView.stopAnimating()
+            YFAudioTool.share().stopPlayRecord()
+            return
+        }
+        //开始播放录音
         if playVoice != nil {
             playVoice!()
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
             self.voiceImageView.animationDuration = 1
             self.voiceImageView.startAnimating()
         }
+        
+        //录音播放完成回调
+        YFAudioTool.share().playCompleteRecord = { ()->() in
+            self.voiceImageView.stopAnimating()
+        }
+        
+       
    
     }
     

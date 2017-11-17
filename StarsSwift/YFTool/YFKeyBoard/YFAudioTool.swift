@@ -10,18 +10,19 @@ import UIKit
 import AVFoundation
 class YFAudioTool: NSObject {
 
-    var audioRecorder:AVAudioRecorder?
+    private var audioRecorder:AVAudioRecorder?
     let file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record.caf")
-    let recordSettings = [AVSampleRateKey : NSNumber(value: Float(44100.0)),//声音采样率
+   private let recordSettings = [AVSampleRateKey : NSNumber(value: Float(44100.0)),//声音采样率
         AVFormatIDKey : NSNumber(value: Int32(kAudioFormatAppleIMA4)),//编码格式
         AVNumberOfChannelsKey : NSNumber(value: 1),//采集音轨
         AVEncoderAudioQualityKey : NSNumber(value:Int8(AVAudioQuality.high.rawValue)),
         AVLinearPCMIsFloatKey:NSNumber.init(value: 8)]
     
-    let audioSession = AVAudioSession.sharedInstance()
-    var audioPlayer:AVAudioPlayer? = nil
-    var voliceTimer:Timer? = nil
+   private let audioSession = AVAudioSession.sharedInstance()
+   private var audioPlayer:AVAudioPlayer? = nil
+   private var voliceTimer:Timer? = nil
     
+    var playCompleteRecord:(()->())?
     static var audioTool:YFAudioTool?
     
     static func share()->(YFAudioTool){
@@ -109,6 +110,10 @@ class YFAudioTool: NSObject {
   
     }
     
+     func stopPlayRecord(){
+        audioPlayer?.stop()
+    }
+    
     @objc func updateVolice(){
         
         audioRecorder?.updateMeters()
@@ -129,6 +134,11 @@ class YFAudioTool: NSObject {
 extension YFAudioTool:AVAudioPlayerDelegate{
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if flag{ print("播放完成!") }
+        if flag{
+            print("播放完成!")
+            if self.playCompleteRecord != nil{
+                self.playCompleteRecord!()
+            }
+        }
     }
 }
